@@ -5,7 +5,7 @@ namespace AddressLocator
     /// <summary>
     /// Latitude/Longitude co-ordinates of a location.
     /// </summary>
-    public struct Location
+    public class Location
     {
         private readonly double latitude;
         private readonly double longitude;
@@ -17,8 +17,8 @@ namespace AddressLocator
         /// <param name="longitude">The longitude value to initialize this Location to.</param>
         public Location(double latitude, double longitude)
         {
-            this.latitude = latitude;
-            this.longitude = longitude;
+            this.latitude = latitude % 90;
+            this.longitude = longitude % 180;
         }
 
         /// <summary>
