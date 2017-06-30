@@ -22,12 +22,12 @@ namespace AddressLocator
         }
 
         /// <summary>
-        /// Gets the Latitude value of this Location.
+        /// Gets the Latitude value of this Location (should be -90 to 90).
         /// </summary>
         public double Latitude { get { return latitude; } }
 
         /// <summary>
-        /// Gets the Longitude value of this Location.
+        /// Gets the Longitude value of this Location (should be -180 to 180).
         /// </summary>
         public double Longitude { get { return longitude; } }
 
