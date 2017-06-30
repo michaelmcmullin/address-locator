@@ -46,6 +46,11 @@ namespace AddressLocator
         public abstract string Name { get; }
 
         /// <summary>
+        /// The plural name of this distance.
+        /// </summary>
+        public virtual string Plural { get { return Name + "s"; } }
+
+        /// <summary>
         /// An abbreviation of this distance (useful for formatting strings).
         /// </summary>
         public abstract string Abbreviation { get; }

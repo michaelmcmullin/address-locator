@@ -32,6 +32,11 @@ namespace AddressLocator
         public override string Name => "Foot";
 
         /// <summary>
+        /// The plural name of this distance.
+        /// </summary>
+        public override string Plural => "Feet";
+
+        /// <summary>
         /// The abbreviated name of this distance unit.
         /// </summary>
         public override string Abbreviation => "ft";
