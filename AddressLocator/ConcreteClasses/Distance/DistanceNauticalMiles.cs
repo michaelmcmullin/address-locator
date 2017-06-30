@@ -5,35 +5,35 @@ using System.Text;
 namespace AddressLocator
 {
     /// <summary>
-    /// Stores distance values in feet
+    /// Stores distance values in nautical miles
     /// </summary>
-    public class DistanceFoot : Distance
+    public class DistanceNauticalMiles : Distance
     {
         /// <summary>
         /// Default constructor, initialises the Value to zero.
         /// </summary>
-        public DistanceFoot() : base() { }
+        public DistanceNauticalMiles() : base() { }
 
         /// <summary>
         /// Constructor that sets a distance Value.
         /// </summary>
         /// <param name="value">The value to initialise this distance to.
         /// </param>
-        public DistanceFoot(double value) : base(value) { }
+        public DistanceNauticalMiles(double value) : base(value) { }
 
         /// <summary>
         /// The amount to multiply this distance by to convert it to metres.
         /// </summary>
-        public override double ValueToMetresRatio => 0.3048;
+        public override double ValueToMetresRatio => 1852;
 
         /// <summary>
         /// The name of this distance unit.
         /// </summary>
-        public override string Name => "Foot";
+        public override string Name => "Nautical Mile";
 
         /// <summary>
         /// The abbreviated name of this distance unit.
         /// </summary>
-        public override string Abbreviation => "ft";
+        public override string Abbreviation => "nmi";
     }
 }

@@ -5,35 +5,35 @@ using System.Text;
 namespace AddressLocator
 {
     /// <summary>
-    /// Stores distance values in miles
+    /// Stores distance values in kilometers
     /// </summary>
-    public class DistanceMile : Distance
+    public class DistanceKilometres : Distance
     {
         /// <summary>
         /// Default constructor, initialises the Value to zero.
         /// </summary>
-        public DistanceMile() : base() { }
+        public DistanceKilometres() : base() { }
 
         /// <summary>
         /// Constructor that sets a distance Value.
         /// </summary>
         /// <param name="value">The value to initialise this distance to.
         /// </param>
-        public DistanceMile(double value) : base(value) { }
+        public DistanceKilometres(double value) : base(value) { }
 
         /// <summary>
         /// The amount to multiply this distance by to convert it to metres.
         /// </summary>
-        public override double ValueToMetresRatio => 1609.344;
+        public override double ValueToMetresRatio => 1000;
 
         /// <summary>
         /// The name of this distance unit.
         /// </summary>
-        public override string Name => "Mile";
+        public override string Name => "Kilometre";
 
         /// <summary>
         /// The abbreviated name of this distance unit.
         /// </summary>
-        public override string Abbreviation => "mi";
+        public override string Abbreviation => "km";
     }
 }

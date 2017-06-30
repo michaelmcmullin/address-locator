@@ -12,7 +12,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceCentimetres_DefaultConstructor_ShouldBeZero()
         {
-            DistanceCentimetre distance = new DistanceCentimetre();
+            DistanceCentimetres distance = new DistanceCentimetres();
             Assert.AreEqual(0, distance.Value, Tolerance);
             Assert.AreEqual(0, distance.ValueInMetres, Tolerance);
         }
@@ -20,7 +20,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceCentimetres_DefaultConstructor_SpecifyValue()
         {
-            DistanceCentimetre distance = new DistanceCentimetre(10);
+            DistanceCentimetres distance = new DistanceCentimetres(10);
             Assert.AreEqual(10, distance.Value, Tolerance);
             Assert.AreEqual(0.1, distance.ValueInMetres, Tolerance);
         }
@@ -28,7 +28,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceFeet_DefaultConstructor_ShouldBeZero()
         {
-            DistanceFoot distance = new DistanceFoot();
+            DistanceFeet distance = new DistanceFeet();
             Assert.AreEqual(0, distance.Value, Tolerance);
             Assert.AreEqual(0, distance.ValueInMetres, Tolerance);
         }
@@ -36,7 +36,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceFeet_DefaultConstructor_SpecifyValue()
         {
-            DistanceFoot distance = new DistanceFoot(10);
+            DistanceFeet distance = new DistanceFeet(10);
             Assert.AreEqual(10, distance.Value, Tolerance);
             Assert.AreEqual(3.048, distance.ValueInMetres, Tolerance);
         }
@@ -44,7 +44,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceKilometres_DefaultConstructor_ShouldBeZero()
         {
-            DistanceKilometre distance = new DistanceKilometre();
+            DistanceKilometres distance = new DistanceKilometres();
             Assert.AreEqual(0, distance.Value, Tolerance);
             Assert.AreEqual(0, distance.ValueInMetres, Tolerance);
         }
@@ -52,7 +52,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceKilometres_DefaultConstructor_SpecifyValue()
         {
-            DistanceKilometre distance = new DistanceKilometre(10);
+            DistanceKilometres distance = new DistanceKilometres(10);
             Assert.AreEqual(10, distance.Value, Tolerance);
             Assert.AreEqual(10000, distance.ValueInMetres, Tolerance);
         }
@@ -60,7 +60,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceMetres_DefaultConstructor_ShouldBeZero()
         {
-            DistanceMetre distance = new DistanceMetre();
+            DistanceMetres distance = new DistanceMetres();
             Assert.AreEqual(0, distance.Value, Tolerance);
             Assert.AreEqual(0, distance.ValueInMetres, Tolerance);
         }
@@ -68,7 +68,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceMetres_DefaultConstructor_SpecifyValue()
         {
-            DistanceMetre distance = new DistanceMetre(10);
+            DistanceMetres distance = new DistanceMetres(10);
             Assert.AreEqual(10, distance.Value, Tolerance);
             Assert.AreEqual(10, distance.ValueInMetres, Tolerance);
         }
@@ -76,7 +76,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceMiles_DefaultConstructor_ShouldBeZero()
         {
-            DistanceMile distance = new DistanceMile();
+            DistanceMiles distance = new DistanceMiles();
             Assert.AreEqual(0, distance.Value, Tolerance);
             Assert.AreEqual(0, distance.ValueInMetres, Tolerance);
         }
@@ -84,7 +84,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceMiles_DefaultConstructor_SpecifyValue()
         {
-            DistanceMile distance = new DistanceMile(10);
+            DistanceMiles distance = new DistanceMiles(10);
             Assert.AreEqual(10, distance.Value, Tolerance);
             Assert.AreEqual(16093.44, distance.ValueInMetres, Tolerance);
         }
@@ -92,7 +92,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceNauticalMiles_DefaultConstructor_ShouldBeZero()
         {
-            DistanceNauticalMile distance = new DistanceNauticalMile();
+            DistanceNauticalMiles distance = new DistanceNauticalMiles();
             Assert.AreEqual(0, distance.Value, Tolerance);
             Assert.AreEqual(0, distance.ValueInMetres, Tolerance);
         }
@@ -100,7 +100,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceNauticalMiles_DefaultConstructor_SpecifyValue()
         {
-            DistanceNauticalMile distance = new DistanceNauticalMile(10);
+            DistanceNauticalMiles distance = new DistanceNauticalMiles(10);
             Assert.AreEqual(10, distance.Value, Tolerance);
             Assert.AreEqual(18520, distance.ValueInMetres, Tolerance);
         }
@@ -108,7 +108,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceYards_DefaultConstructor_ShouldBeZero()
         {
-            DistanceYard distance = new DistanceYard();
+            DistanceYards distance = new DistanceYards();
             Assert.AreEqual(0, distance.Value, Tolerance);
             Assert.AreEqual(0, distance.ValueInMetres, Tolerance);
         }
@@ -116,7 +116,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Distance Constructors")]
         public void DistanceYards_DefaultConstructor_SpecifyValue()
         {
-            DistanceYard distance = new DistanceYard(10);
+            DistanceYards distance = new DistanceYards(10);
             Assert.AreEqual(10, distance.Value, Tolerance);
             Assert.AreEqual(9.144, distance.ValueInMetres, Tolerance);
         }
