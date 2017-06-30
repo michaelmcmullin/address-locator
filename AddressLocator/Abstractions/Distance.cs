@@ -13,7 +13,7 @@ namespace AddressLocator
         /// <summary>
         /// Default Distance constructor, initialises the Value to zero.
         /// </summary>
-        public Distance()
+        protected Distance()
         {
             Value = 0;
         }
@@ -23,7 +23,7 @@ namespace AddressLocator
         /// </summary>
         /// <param name="value">The value to initialise this distance to.
         /// </param>
-        public Distance(double value)
+        protected Distance(double value)
         {
             Value = value;
         }
