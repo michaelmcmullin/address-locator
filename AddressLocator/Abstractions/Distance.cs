@@ -29,6 +29,25 @@ namespace AddressLocator
         }
 
         /// <summary>
+        /// Constructor that sets a distance Value from another Distance
+        /// instance.
+        /// </summary>
+        /// <param name="distance">The distance to use for initialising this
+        /// distance instance.
+        /// </param>
+        protected Distance(Distance distance)
+        {
+            if (distance.ValueToMetresRatio == this.ValueToMetresRatio)
+            {
+                this.Value = distance.Value;
+            }
+            else
+            {
+                this.Value = distance.ValueInMetres / this.ValueToMetresRatio;
+            }
+        }
+
+        /// <summary>
         /// The distance value using the specified units defined for the
         /// concrete implementation.
         /// </summary>
@@ -97,6 +116,10 @@ namespace AddressLocator
             return $"{Value} {Abbreviation}";
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return ValueInMetres.GetHashCode();

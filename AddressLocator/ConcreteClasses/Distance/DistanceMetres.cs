@@ -22,6 +22,14 @@ namespace AddressLocator
         public DistanceMetres(double value) : base(value) { }
 
         /// <summary>
+        /// Constructor that's based on another Distance instance.
+        /// </summary>
+        /// <param name="distance">The Distance object to create a new
+        /// instance from.</param>
+        public DistanceMetres(Distance distance) : base(distance) { }
+
+
+        /// <summary>
         /// The amount to multiply this distance by to convert it to metres.
         /// </summary>
         public override double ValueToMetresRatio => 1;
