@@ -7,16 +7,19 @@ namespace AddressLocator.Mocks
     public class Formatter : IAddressFormatter
     {
         /// <summary>
-        /// Given an unformatted address string, recreate it in a format that's
-        /// suitable for further manipulation.
+        /// Given an Address instance, recreate it in a format that's suitable
+        /// for further manipulation.
         /// </summary>
-        /// <param name="address">The original raw address string.</param>
+        /// <param name="address">The original address instance.</param>
         /// <returns>A formatted address ready for further processing.</returns>
-        public string Format(string address)
+        public string Format(Address address)
         {
-            return address.Replace("\n", ",")
-                        .Replace("\r", ",")
-                        .Replace(",,", ",");
+            string output = $"{address.Address1},{address.Address2},{address.City},{address.Region},{address.Postcode},{address.Country}";
+            while(output.IndexOf(",,") > -1)
+            {
+                output = output.Replace(",,", ",");
+            }
+            return output.Trim(", \n\r\t".ToCharArray());
         }
 
         /// <summary>

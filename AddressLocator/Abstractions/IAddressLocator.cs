@@ -7,7 +7,7 @@ namespace AddressLocator
     /// <summary>
     /// A service for finding the latitude and longitude of a location.
     /// </summary>
-    interface IAddressLocator
+    public interface IAddressLocator
     {
         /// <summary>
         /// Given a formatted address string, attempt to resolve its location in

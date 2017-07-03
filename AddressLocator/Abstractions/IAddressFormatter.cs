@@ -7,15 +7,15 @@ namespace AddressLocator
     /// <summary>
     /// Utility for formatting address strings
     /// </summary>
-    interface IAddressFormatter
+    public interface IAddressFormatter
     {
         /// <summary>
-        /// Given an unformatted address string, recreate it in a format that's
-        /// suitable for further manipulation.
+        /// Given an Address instance, convert it to a string in the correct
+        /// format.
         /// </summary>
-        /// <param name="address">The original raw address string.</param>
+        /// <param name="address">The original address object.</param>
         /// <returns>A formatted address ready for further processing.</returns>
-        string Format(string address);
+        string Format(Address address);
 
         /// <summary>
         /// Remove the first part of a given address, effectively making it less
