@@ -7,7 +7,7 @@ namespace AddressLocator
     /// <summary>
     /// Repository for retrieving Country data.
     /// </summary>
-    interface ICountryRepository
+    public interface ICountryRepository
     {
         /// <summary>
         /// Gets a Country instance based on its name.

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AddressLocator
+namespace AddressLocator.Repositories
 {
     /// <summary>
     /// Repository for retrieving AddressFormatter data.
@@ -13,6 +13,11 @@ namespace AddressLocator
         /// Repository to store address formatters.
         /// </summary>
         private static Dictionary<string, IAddressFormatter> formatters;
+
+        /// <summary>
+        /// The default address formatter.
+        /// </summary>
+        private static IAddressFormatter defaultFormatter = new Formatters.Generic();
 
         /// <summary>
         /// Used to prevent two threads accessing formatters simultaneously
@@ -35,10 +40,23 @@ namespace AddressLocator
         /// Gets an IAddressFormatter instance based on its name.
         /// </summary>
         /// <param name="name">The name of the formatter to fetch.</param>
-        /// <returns>A populated IAddressFormatter instance, or null.</returns>
+        /// <returns>A populated IAddressFormatter instance, or the default.</returns>
         public IAddressFormatter Get(string name)
         {
-            return formatters[name];
+            IAddressFormatter output = null;
+            if (formatters.ContainsKey(name))
+            {
+                output = formatters[name];
+            }
+            return output == null ? Default : output;
+        }
+
+        /// <summary>
+        /// Gets a default AddressFormatter from this repository.
+        /// </summary>
+        public IAddressFormatter Default
+        {
+            get { return defaultFormatter; }
         }
 
         /// <summary>
@@ -52,7 +70,7 @@ namespace AddressLocator
                 {
                     formatters = new Dictionary<string, IAddressFormatter>(StringComparer.OrdinalIgnoreCase);
                 }
-                formatters.Add("Generic", new Formatters.Generic());
+                formatters.Add("Generic", defaultFormatter);
             }
         }
     }
