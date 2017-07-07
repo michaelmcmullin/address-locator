@@ -11,7 +11,7 @@ namespace AddressLocationUnitTests
         [TestMethod, TestCategory("Address Locators")]
         public void AddressLocator_GetLocation()
         {
-            Locator locator = new Locator();
+            MockLocator locator = new MockLocator();
             Location location = locator.GetCoordinates("Some Address");
             Assert.AreEqual(0, location.Latitude);
             Assert.AreEqual(0, location.Longitude);

@@ -7,7 +7,7 @@ namespace AddressLocator.Mocks
     /// <summary>
     /// A mock service for finding the latitude and longitude of an address.
     /// </summary>
-    public class Locator : IAddressLocator
+    public class MockLocator : IAddressLocator
     {
         /// <summary>
         /// Given a formatted address string, attempt to resolve its location in

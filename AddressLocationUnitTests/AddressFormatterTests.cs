@@ -15,7 +15,7 @@ namespace AddressLocationUnitTests
         [TestInitialize]
         public void AddressFormatter_Initialiser()
         {
-            formatter = new AddressFormatter();
+            formatter = new MockAddressFormatter();
             address = new Address(formatter);
             ireland = new Country { Name = "Ireland", Code = "IE" };
             address.Address1 = "1 Main Street";

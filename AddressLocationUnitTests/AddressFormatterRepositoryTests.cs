@@ -15,7 +15,7 @@ namespace AddressLocationUnitTests
         [TestInitialize]
         public void AddressFormatterRepository_Initialiser()
         {
-            formatters = new AddressFormatterRepository();
+            formatters = new MockAddressFormatterRepository();
             address = new Address(formatters.Default);
             ireland = new Country { Name = "Ireland", Code = "IE" };
             address.Address1 = "1 Main Street";

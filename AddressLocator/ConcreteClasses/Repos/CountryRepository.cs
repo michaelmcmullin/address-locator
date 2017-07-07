@@ -45,7 +45,11 @@ namespace AddressLocator.Repositories
         /// <returns>A populated Country instance, or null.</returns>
         public Country GetByName(string name)
         {
-            return countries[name];
+            if (countries.ContainsKey(name))
+            {
+                return countries[name];
+            }
+            return null;
         }
 
         /// <summary>

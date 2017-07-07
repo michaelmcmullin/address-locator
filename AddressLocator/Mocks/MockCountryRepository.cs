@@ -7,7 +7,7 @@ namespace AddressLocator.Mocks
     /// <summary>
     /// Repository for retrieving Country data.
     /// </summary>
-    public class CountryRepository : ICountryRepository
+    public class MockCountryRepository : ICountryRepository
     {
         /// <summary>
         /// Repository to store country data.
@@ -28,7 +28,7 @@ namespace AddressLocator.Mocks
         /// <summary>
         /// Constructor that populates countries if it hasn't already been done.
         /// </summary>
-        public CountryRepository(IAddressFormatterRepository formatterRepository)
+        public MockCountryRepository(IAddressFormatterRepository formatterRepository)
         {
             this.formatters = formatterRepository;
 
@@ -45,7 +45,11 @@ namespace AddressLocator.Mocks
         /// <returns>A populated Country instance, or null.</returns>
         public Country GetByName(string name)
         {
-            return countries[name];
+            if (countries.ContainsKey(name))
+            {
+                return countries[name];
+            }
+            return null;
         }
 
         /// <summary>

@@ -43,12 +43,11 @@ namespace AddressLocator.Repositories
         /// <returns>A populated IAddressFormatter instance, or the default.</returns>
         public IAddressFormatter Get(string name)
         {
-            IAddressFormatter output = null;
             if (formatters.ContainsKey(name))
             {
-                output = formatters[name];
+                return formatters[name];
             }
-            return output == null ? Default : output;
+            return null;
         }
 
         /// <summary>

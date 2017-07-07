@@ -7,7 +7,7 @@ namespace AddressLocator.Mocks
     /// <summary>
     /// Repository for retrieving AddressFormatter data.
     /// </summary>
-    public class AddressFormatterRepository : IAddressFormatterRepository
+    public class MockAddressFormatterRepository : IAddressFormatterRepository
     {
         /// <summary>
         /// Repository to store address formatters.
@@ -28,7 +28,7 @@ namespace AddressLocator.Mocks
         /// <summary>
         /// Constructor that populates formatters if it hasn't already been done.
         /// </summary>
-        public AddressFormatterRepository()
+        public MockAddressFormatterRepository()
         {
             if (formatters == null || formatters.Count == 0)
             {
@@ -71,7 +71,7 @@ namespace AddressLocator.Mocks
                     formatters = new Dictionary<string, IAddressFormatter>(StringComparer.OrdinalIgnoreCase);
                 }
                 formatters.Add("Generic", defaultFormatter);
-                formatters.Add("Test", new MockAddressFormatter());
+                formatters.Add("Test", new TestAddressFormatter());
             }
         }
     }
