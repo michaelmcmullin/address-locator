@@ -83,7 +83,11 @@ namespace AddressLocator
         /// <summary>
         /// The distance value in metres.
         /// </summary>
-        public double ValueInMetres { get { return Value * ValueToMetresRatio; } }
+        public double ValueInMetres
+        {
+            get { return Value * ValueToMetresRatio; }
+            set { Value = value / ValueToMetresRatio; }
+        }
 
         /// <summary>
         /// A value indicating how distance1 compares to distance2. Less than
