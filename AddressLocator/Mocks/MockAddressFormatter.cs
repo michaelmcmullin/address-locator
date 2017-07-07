@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AddressLocator.AddressFormatters
+namespace AddressLocator.Mocks
 {
-    public class Generic : BaseFormatter
+    public class MockAddressFormatter : AddressFormatters.BaseFormatter
     {
         /// <summary>
         /// A generic address formatter:
@@ -15,6 +15,6 @@ namespace AddressLocator.AddressFormatters
         /// {4}: address.Postcode,
         /// {5}: address.Country
         /// </summary>
-        protected override string formatString { get => "{0},{1},{2},{3},{4},{5}"; }
+        protected override string formatString { get => "{5},{4},{3},{2},{1},{0}"; }
     }
 }

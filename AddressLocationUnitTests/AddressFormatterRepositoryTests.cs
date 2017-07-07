@@ -41,5 +41,14 @@ namespace AddressLocationUnitTests
             Assert.AreEqual("1 Main Street,Kilcullen,Co. Kildare,Ireland", formattedAddress);
         }
 
+        [TestMethod, TestCategory("Repositories")]
+        public void AddressFormatterRepository_TestMockFormatter()
+        {
+            IAddressFormatter formatter = formatters.Get("Test");
+            string formattedAddress = formatter.Format(address);
+            // Mock formatter should display the address backwards.
+            Assert.AreEqual("Ireland,Co. Kildare,Kilcullen,1 Main Street", formattedAddress);
+        }
+
     }
 }

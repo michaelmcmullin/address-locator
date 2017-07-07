@@ -71,6 +71,7 @@ namespace AddressLocator.Mocks
                     formatters = new Dictionary<string, IAddressFormatter>(StringComparer.OrdinalIgnoreCase);
                 }
                 formatters.Add("Generic", defaultFormatter);
+                formatters.Add("Test", new MockAddressFormatter());
             }
         }
     }
