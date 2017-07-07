@@ -28,6 +28,17 @@ namespace AddressLocator
         /// instance from.</param>
         public DistanceMetres(Distance distance) : base(distance) { }
 
+        /// <summary>
+        /// Constructor that sets a distance Value by measuring the distance
+        /// between two locations.
+        /// </summary>
+        /// <param name="location1">Latitude and longitude of first location.
+        /// </param>
+        /// <param name="location2">Latitude and longitude of second location.
+        /// </param>
+        public DistanceMetres(Location location1, Location location2) :
+            base(location1, location2)
+        { }
 
         /// <summary>
         /// The amount to multiply this distance by to convert it to metres.

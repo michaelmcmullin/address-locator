@@ -48,6 +48,19 @@ namespace AddressLocator
         }
 
         /// <summary>
+        /// Constructor that sets a distance Value by measuring the distance
+        /// between two locations.
+        /// </summary>
+        /// <param name="location1">Latitude and longitude of first location.
+        /// </param>
+        /// <param name="location2">Latitude and longitude of second location.
+        /// </param>
+        protected Distance(Location location1, Location location2)
+        {
+
+        }
+
+        /// <summary>
         /// The distance value using the specified units defined for the
         /// concrete implementation.
         /// </summary>
