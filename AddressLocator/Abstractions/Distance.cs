@@ -58,11 +58,10 @@ namespace AddressLocator
         protected Distance(Location location1, Location location2)
         {
             double earthRadius = 6371000;
-            double radians = Math.PI / 180.0;
-            double lat1 = location1.Latitude * radians;
-            double lat2 = location2.Latitude * radians;
-            double lon1 = location1.Longitude * radians;
-            double lon2 = location2.Longitude * radians;
+            double lat1 = location1.LatitudeRadians;
+            double lat2 = location2.LatitudeRadians;
+            double lon1 = location1.LongitudeRadians;
+            double lon2 = location2.LongitudeRadians;
 
             double a = Math.Pow(Math.Sin((lat2 - lat1) / 2.0), 2.0);
             double b = Math.Pow(Math.Sin((lon2 - lon1) / 2.0), 2.0);

@@ -7,13 +7,13 @@ namespace AddressLocationUnitTests
     [TestClass]
     public class DistanceConstructorTests
     {
-        const double Tolerance = 0.000001;
+        const double Tolerance = 0.1;
         private Location dublin;
         private Location newyork;
-        private double metresDublinToNewYork = 5114878.69864054;
-        private double milesDublinToNewYork = 3178.23827512362;
-        private double nauticalmilesDublinToNewYork = 2761.81355218172;
-        private double feetDublinToNewYork = 16781098.0926527;
+        private double metresDublinToNewYork = 5114878.6986;
+        private double milesDublinToNewYork = 3178.23;
+        private double nauticalmilesDublinToNewYork = 2761.81;
+        private double feetDublinToNewYork = 16781098.09;
 
         [TestInitialize]
         public void DistanceConstructor_Initialiser()
@@ -73,7 +73,7 @@ namespace AddressLocationUnitTests
         {
             DistanceFeet distance = new DistanceFeet(10);
             Assert.AreEqual(10, distance.Value, Tolerance);
-            Assert.AreEqual(3.048, distance.ValueInMetres, Tolerance);
+            Assert.AreEqual(3.04, distance.ValueInMetres, Tolerance);
         }
 
         [TestMethod, TestCategory("Distance Constructors")]
@@ -81,7 +81,7 @@ namespace AddressLocationUnitTests
         {
             DistanceKilometres kmDistance = new DistanceKilometres(10);
             DistanceFeet ftDistance = new DistanceFeet(kmDistance);
-            Assert.AreEqual(32808.3989501312, ftDistance.Value, Tolerance);
+            Assert.AreEqual(32808.39, ftDistance.Value, Tolerance);
             Assert.AreEqual(10000, ftDistance.ValueInMetres, Tolerance);
         }
 
@@ -186,7 +186,7 @@ namespace AddressLocationUnitTests
         {
             DistanceKilometres kmDistance = new DistanceKilometres(10);
             DistanceMiles miDistance = new DistanceMiles(kmDistance);
-            Assert.AreEqual(6.21371192237334, miDistance.Value, Tolerance);
+            Assert.AreEqual(6.21, miDistance.Value, Tolerance);
             Assert.AreEqual(10000, miDistance.ValueInMetres, Tolerance);
         }
 
@@ -221,7 +221,7 @@ namespace AddressLocationUnitTests
         {
             DistanceKilometres kmDistance = new DistanceKilometres(10);
             DistanceNauticalMiles nmiDistance = new DistanceNauticalMiles(kmDistance);
-            Assert.AreEqual(5.39956803455724, nmiDistance.Value, Tolerance);
+            Assert.AreEqual(5.39, nmiDistance.Value, Tolerance);
             Assert.AreEqual(10000, nmiDistance.ValueInMetres, Tolerance);
         }
 
@@ -248,7 +248,7 @@ namespace AddressLocationUnitTests
         {
             DistanceYards distance = new DistanceYards(10);
             Assert.AreEqual(10, distance.Value, Tolerance);
-            Assert.AreEqual(9.144, distance.ValueInMetres, Tolerance);
+            Assert.AreEqual(9.14, distance.ValueInMetres, Tolerance);
         }
 
         [TestMethod, TestCategory("Distance Constructors")]
@@ -256,7 +256,7 @@ namespace AddressLocationUnitTests
         {
             DistanceKilometres kmDistance = new DistanceKilometres(10);
             DistanceYards ydDistance = new DistanceYards(kmDistance);
-            Assert.AreEqual(10936.1329833771, ydDistance.Value, Tolerance);
+            Assert.AreEqual(10936.13, ydDistance.Value, Tolerance);
             Assert.AreEqual(10000, ydDistance.ValueInMetres, Tolerance);
         }
 

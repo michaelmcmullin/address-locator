@@ -10,6 +10,9 @@ namespace AddressLocator
         private readonly double latitude;
         private readonly double longitude;
 
+        private readonly double latitudeRadians;
+        private readonly double longitudeRadians;
+
         /// <summary>
         /// Constructor defining latitude and longitude.
         /// </summary>
@@ -19,6 +22,9 @@ namespace AddressLocator
         {
             this.latitude = latitude % 90;
             this.longitude = longitude % 180;
+
+            this.latitudeRadians = this.latitude * Math.PI / 180.0;
+            this.longitudeRadians = this.longitude * Math.PI / 180.0;
         }
 
         /// <summary>
@@ -30,6 +36,16 @@ namespace AddressLocator
         /// Gets the Longitude value of this Location (should be -180 to 180).
         /// </summary>
         public double Longitude { get { return longitude; } }
+
+        /// <summary>
+        /// Gets the Latitude value of this Location in Radians.
+        /// </summary>
+        public double LatitudeRadians { get { return latitudeRadians; } }
+
+        /// <summary>
+        /// Gets the Longitude value of this Location in Radians.
+        /// </summary>
+        public double LongitudeRadians { get { return longitudeRadians; } }
 
         /// <summary>
         /// A string representation of this Location.
