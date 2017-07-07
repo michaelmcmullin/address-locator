@@ -23,12 +23,12 @@ namespace AddressLocator.Repositories
         /// <summary>
         /// The address formatters to use for setting addresses.
         /// </summary>
-        private IFormatterRepository formatters;
+        private IAddressFormatterRepository formatters;
 
         /// <summary>
         /// Constructor that populates countries if it hasn't already been done.
         /// </summary>
-        public CountryRepository(IFormatterRepository formatterRepository)
+        public CountryRepository(IAddressFormatterRepository formatterRepository)
         {
             this.formatters = formatterRepository;
 

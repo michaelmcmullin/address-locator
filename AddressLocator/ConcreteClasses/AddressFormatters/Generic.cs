@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AddressLocator.Formatters
+namespace AddressLocator.AddressFormatters
 {
     public class Generic : IAddressFormatter
     {

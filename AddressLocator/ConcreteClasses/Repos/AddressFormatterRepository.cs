@@ -7,7 +7,7 @@ namespace AddressLocator.Repositories
     /// <summary>
     /// Repository for retrieving AddressFormatter data.
     /// </summary>
-    public class FormatterRepository : IFormatterRepository
+    public class AddressFormatterRepository : IAddressFormatterRepository
     {
         /// <summary>
         /// Repository to store address formatters.
@@ -17,7 +17,7 @@ namespace AddressLocator.Repositories
         /// <summary>
         /// The default address formatter.
         /// </summary>
-        private static IAddressFormatter defaultFormatter = new Formatters.Generic();
+        private static IAddressFormatter defaultFormatter = new AddressFormatters.Generic();
 
         /// <summary>
         /// Used to prevent two threads accessing formatters simultaneously
@@ -28,7 +28,7 @@ namespace AddressLocator.Repositories
         /// <summary>
         /// Constructor that populates formatters if it hasn't already been done.
         /// </summary>
-        public FormatterRepository()
+        public AddressFormatterRepository()
         {
             if (formatters == null || formatters.Count == 0)
             {

@@ -7,7 +7,7 @@ namespace AddressLocator
     /// <summary>
     /// Repository for retrieving AddressFormatter data.
     /// </summary>
-    public interface IFormatterRepository
+    public interface IAddressFormatterRepository
     {
         /// <summary>
         /// Gets a named AddressFormatter from a repository instance.

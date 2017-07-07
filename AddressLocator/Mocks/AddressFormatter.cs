@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AddressLocator.Mocks
 {
-    public class Formatter : IAddressFormatter
+    public class AddressFormatter : IAddressFormatter
     {
         /// <summary>
         /// Given an Address instance, recreate it in a format that's suitable

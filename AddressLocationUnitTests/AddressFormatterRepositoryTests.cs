@@ -8,14 +8,14 @@ namespace AddressLocationUnitTests
     [TestClass]
     public class AddressFormatterRepositoryTests
     {
-        private IFormatterRepository formatters;
+        private IAddressFormatterRepository formatters;
         private Address address;
         private Country ireland;
 
         [TestInitialize]
         public void AddressFormatterRepository_Initialiser()
         {
-            formatters = new FormatterRepository();
+            formatters = new AddressFormatterRepository();
             address = new Address(formatters.Default);
             ireland = new Country { Name = "Ireland", Code = "IE" };
             address.Address1 = "1 Main Street";
@@ -37,6 +37,7 @@ namespace AddressLocationUnitTests
         {
             IAddressFormatter formatter = formatters.Get("Non Existant Formatter");
             string formattedAddress = formatter.Format(address);
+            // should revert to default formatter...
             Assert.AreEqual("1 Main Street,Kilcullen,Co. Kildare,Ireland", formattedAddress);
         }
 
