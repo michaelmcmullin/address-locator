@@ -9,6 +9,20 @@ namespace AddressLocator.Mocks
     /// </summary>
     public class MockLocator : IAddressLocator
     {
+        public Address Address { get; set; }
+
+        /// <summary>
+        /// Given an address string, check to see if a cached version exists to
+        /// save running an expensive call to a third party service.
+        /// </summary>
+        /// <param name="address">A formatted address string.</param>
+        /// <returns>A populated Location, or null if the address is not
+        /// available in the cache.</returns>
+        public Location CachedLocation(string address)
+        {
+            return new Location(0, 0);
+        }
+
         /// <summary>
         /// Given a formatted address string, attempt to resolve its location in
         /// terms of latitude/longitude.
@@ -19,6 +33,11 @@ namespace AddressLocator.Mocks
         public Location GetCoordinates(string address)
         {
             return new Location(0, 0);
+        }
+
+        public Location GetCoordinates()
+        {
+            throw new NotImplementedException();
         }
     }
 }

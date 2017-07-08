@@ -12,7 +12,7 @@ namespace AddressLocator
         /// <summary>
         /// An address formatter to use for converting this address to a string.
         /// </summary>
-        private IAddressFormatter Formatter;
+        public IAddressFormatter Formatter { get; }
 
         /// <summary>
         /// Constructor that initialises the formatter.
