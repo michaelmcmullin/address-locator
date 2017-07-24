@@ -47,7 +47,7 @@ namespace AddressLocator.Repositories
             {
                 return formatters[name];
             }
-            return null;
+            return defaultFormatter;
         }
 
         /// <summary>

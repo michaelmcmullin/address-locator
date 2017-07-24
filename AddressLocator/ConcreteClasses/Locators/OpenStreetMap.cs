@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -95,9 +96,9 @@ namespace AddressLocator.Locators
 
             HttpClient client = new HttpClient();
             string response = client.GetStringAsync(query.ToString()).Result;
-            if (response.Length > 0)
+            if (response.Length > "[]".Length)
             {
-                JObject o = JObject.Parse(response);
+                JObject o = JObject.Parse(response.Trim("[]".ToCharArray()));
                 if (o.Count > 1)
                 {
                     double lat = (double)o["lat"];
@@ -106,6 +107,7 @@ namespace AddressLocator.Locators
                 }
             }
 
+            Task.Delay(TimeBetweenRequests).Wait();
             return FindLocation(Address.Formatter.RemoveStart(address));
         }
     }
