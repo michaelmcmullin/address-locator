@@ -3,6 +3,7 @@ using AddressLocator;
 using AddressLocator.Repositories;
 using AddressLocator.Locators;
 using System.Text.RegularExpressions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TestOpenStreetMap
 {
@@ -11,9 +12,16 @@ namespace TestOpenStreetMap
         static void Main(string[] args)
         {
             ConsoleColor defaultColour = Console.ForegroundColor;
-            AddressFormatterRepository addressFormatters = new AddressFormatterRepository();
-            CountryRepository countries = new CountryRepository(addressFormatters);
 
+            // Set up Dependency Injection
+            var services = new ServiceCollection()
+                .AddSingleton<IAddressFormatterRepository, AddressFormatterRepository>()
+                .AddSingleton<ICountryRepository, CountryRepository>()
+                .BuildServiceProvider();
+            
+            var countries = services.GetService<ICountryRepository>();
+
+            // Set up the address details. 
             Country ireland = countries.GetByName("Ireland");
             Address address = new Address(ireland.AddressSingleLineFormat);
             address.Address1 = "Sandyford Industrial Estate";
