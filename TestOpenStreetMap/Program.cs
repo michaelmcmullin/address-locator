@@ -29,6 +29,10 @@ namespace TestOpenStreetMap
             address.Region = "Dublin 18";
             address.Country = ireland;
 
+            // Here are some other locations for comparison
+            Location dublin = new Location(53.3498, -6.2603);
+            Location newyork = new Location(40.7128, -74.0059);
+
             // Get user's email address (required for OpenStreetMap API requests)
             string email;
             bool firstAttempt = true;
@@ -54,10 +58,26 @@ namespace TestOpenStreetMap
             OpenStreetMap osm = new OpenStreetMap(address, email);
             Location location = osm.GetCoordinates();
 
-            Console.ForegroundColor = location != null ? ConsoleColor.Yellow : ConsoleColor.Red;
-            Console.WriteLine(location != null ? $"Found! {location}" : "Can't find co-ordinates");
+            if (location == null)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Sorry, can't find that location.");
+                Console.ForegroundColor = defaultColour;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"Success! Latitude/Longitude co-ordinates are:\n{location}");
 
-            Console.ForegroundColor = defaultColour;
+                DistanceKilometres dublinDistance = new DistanceKilometres(dublin, location);
+                DistanceKilometres newyorkDistance = new DistanceKilometres(newyork, location);
+                dublinDistance.DecimalPlaces = newyorkDistance.DecimalPlaces = 0;
+
+                Console.ForegroundColor = defaultColour;
+                Console.WriteLine($"\nYou may be interested to know that this address is " +
+                    $"{dublinDistance} from Dublin,\nand {newyorkDistance} from New York!");
+            }
+
             Console.Write("\nPress Enter to quit");
             Console.ReadLine();
         }

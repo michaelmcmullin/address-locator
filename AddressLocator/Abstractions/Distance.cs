@@ -107,6 +107,12 @@ namespace AddressLocator
         public double Value { get { return value; } set { this.value = value; } }
 
         /// <summary>
+        /// The number of decimal places to display this distance when converted
+        /// to a string.
+        /// </summary>
+        public double DecimalPlaces { get; set; } = -1;
+
+        /// <summary>
         /// The distance value in metres.
         /// </summary>
         public double ValueInMetres
@@ -143,7 +149,15 @@ namespace AddressLocator
         /// <returns>A string representation of this Distance.</returns>
         public override string ToString()
         {
-            return $"{Value} {Abbreviation}";
+            double truncatedValue = Value;
+
+            if (DecimalPlaces >= 0)
+            {
+                int multiplier = (int)Math.Pow(10, (double)DecimalPlaces);
+                truncatedValue = Math.Truncate(Value * multiplier) / multiplier;
+            }
+
+            return $"{truncatedValue} {Abbreviation}";
         }
 
         /// <summary>

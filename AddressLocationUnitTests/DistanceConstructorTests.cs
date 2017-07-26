@@ -18,8 +18,8 @@ namespace AddressLocationUnitTests
         [TestInitialize]
         public void DistanceConstructor_Initialiser()
         {
-            dublin = new Location(53.3498, 6.2603);
-            newyork = new Location(40.7128, 74.0059);
+            dublin = new Location(53.3498, -6.2603);
+            newyork = new Location(40.7128, -74.0059);
         }
 
 
